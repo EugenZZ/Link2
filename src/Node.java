@@ -1,9 +1,9 @@
 public class Node {
     public Node pre;
     public Node next;
-    public int data;
+    public String data;
 
-    public Node(int data) {
+    public Node(String data) {
         this.data = data;
     }
 }

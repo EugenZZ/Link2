@@ -39,7 +39,7 @@ public class LinkNode {
         }
     }
     //尾插法
-    public void headInsert(int data){
+    public void headInsert(String data){
         Node newNode = new Node(data);
         if(this.headNode == null){
             this.headNode = newNode;
@@ -52,7 +52,7 @@ public class LinkNode {
         this.size++;
     }
     //头插法
-    public void tailInsert(int data){
+    public void tailInsert(String data){
         Node newNode = new Node(data);
         if(this.headNode == null){
             this.headNode = newNode;
@@ -65,10 +65,10 @@ public class LinkNode {
         this.size++;
     }
     //删除
-    public void delete(int data){
+    public void delete(String data){
         Node cur=this.headNode;
         while(cur!=null){
-            if(cur.data==data){
+            if(cur.data.equals(data)){
                 if(cur==this.headNode){
                     this.headNode = cur.next;
                     if(this.headNode != null){
@@ -95,7 +95,7 @@ public class LinkNode {
         }
     }
     //查询
-    public boolean find(int key){
+    public boolean find(String key){
      Node cur=new Node(key);
      while(cur!=null){
          if(cur.data==key){
@@ -118,9 +118,8 @@ public class LinkNode {
             }
             else{
                 cur2 = cur2.next;
-                return cur2.next;
+                return cur2;
             }
-
         }
         return cur2;
     }
@@ -144,18 +143,17 @@ public class LinkNode {
         this.tailNode=this.headNode;
         Node cur=this.headNode;
         Node pre=null;
-        while(cur!=null){
+        while(cur!=null) {
             //存储第二个节点地址
             Node temp = cur.next;
             //第二个节点指向前一个节点
             cur.next = pre;
             //两个结点向前移一位
             pre = cur;
-            this.headNode=pre;
+            this.headNode = pre;
             cur = temp;
         }
-
-
+        this.display();
 
     }
     //奇偶对调
@@ -168,13 +166,21 @@ public class LinkNode {
         //走到null或走到最后一个为奇数时跳出
         while(cur1!=null&&cur2!=null){
             //相邻奇偶位对换
-            int temp = cur1.data;
+            String temp = cur1.data;
             cur1.data = cur2.data;
             cur2.data = temp;
             //下一组
             cur1=cur2.next;
-            cur2=cur2.next.next;
+            if(cur1!=null){
+                cur2=cur2.next.next;
+            }
+            else{
+                break;
+            }
+
         }
+        this.display();
+
     }
 
 
