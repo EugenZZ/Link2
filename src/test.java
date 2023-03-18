@@ -17,6 +17,11 @@ public class test {
                 System.out.println("请输入正确的数字");
                 flag=true;
             }
+            if(num<=0){
+                flag=true;
+                System.out.println("请输入正确的数字");
+
+            }
         }
         System.out.println("请输入您要存入的数据");
 
