@@ -1,10 +1,10 @@
 public class LinkUtil {
    public static boolean isRound(Node head) {
-       if (head == null || head.next == null) {
+       if (head.next == null || head.next.next == null) {
            return false;
        }
-       Node slow=head;
-       Node fast=head.next;
+       Node slow=head.next;
+       Node fast=head.next.next;
        while (fast!=slow) {
            //当走到null代表为非循环链表结束
            if (fast.next == null || fast.next.next == null) {

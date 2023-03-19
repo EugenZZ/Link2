@@ -19,8 +19,9 @@ public class LinkNode {
     }
 
     public LinkNode() {
-        this.headNode =null;
-        this.tailNode =null;
+        this.headNode =new Node();
+        this.tailNode =headNode;;
+
     }
     //对调头尾节点，方便链表反转
     public void turn(){
@@ -32,7 +33,7 @@ public class LinkNode {
 
     //打印链表
     public void display(){
-        Node cur=this.headNode;
+        Node cur=this.headNode.next;
         while(cur != null){
             System.out.print(cur.data+" ");
             cur=cur.next;
@@ -41,14 +42,14 @@ public class LinkNode {
     //尾插法
     public void headInsert(String data){
         Node newNode = new Node(data);
-        if(this.headNode == null){
-            this.headNode = newNode;
-            this.tailNode = newNode;
-        }else{
+//        if(this.headNode == null){
+//            this.headNode = newNode;
+//            this.tailNode = newNode;
+//        }else{
             this.tailNode.next = newNode;
             newNode.pre = this.tailNode;
             this.tailNode = newNode;
-        }
+        //}
         this.size++;
     }
     //头插法
@@ -66,13 +67,13 @@ public class LinkNode {
     }
     //删除
     public void delete(String data){
-        Node cur=this.headNode;
+        Node cur=this.headNode.next;
         while(cur!=null){
             if(cur.data.equals(data)){
-                if(cur==this.headNode){
-                    this.headNode = cur.next;
-                    if(this.headNode != null){
-                        this.headNode.pre = null;
+                if(cur==this.headNode.next){
+                    this.headNode.next = cur.next;
+                    if(this.headNode.next != null){
+                        this.headNode.next.pre = null;
                     }
                     else{
                         this.tailNode = null;
@@ -107,9 +108,9 @@ public class LinkNode {
     }
     //查询中点
     public Node findMidPoint(){
-        Node cur1=this.headNode;
+        Node cur1=this.headNode.next;
         //快指针
-        Node cur2=this.headNode;
+        Node cur2=this.headNode.next;
         //慢指针
         while(cur1.next!=null){
             if(cur1.next.next!=null) {
@@ -140,8 +141,8 @@ public class LinkNode {
     }
     //反转函数
     public void reverse1(){
-        this.tailNode=this.headNode;
-        Node cur=this.headNode;
+        this.tailNode=this.headNode.next;
+        Node cur=this.headNode.next;
         Node pre=null;
         while(cur!=null) {
             //存储第二个节点地址
@@ -150,7 +151,7 @@ public class LinkNode {
             cur.next = pre;
             //两个结点向前移一位
             pre = cur;
-            this.headNode = pre;
+            this.headNode.next = pre;
             cur = temp;
         }
         this.display();
@@ -158,8 +159,8 @@ public class LinkNode {
     }
     //奇偶对调
     public void change(){
-        Node cur1=this.headNode;
-        Node cur2=this.headNode.next;
+        Node cur1=this.headNode.next;
+        Node cur2=this.headNode.next.next;
         if(cur1==null){
             return;
         }
