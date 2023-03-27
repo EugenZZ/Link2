@@ -6,6 +6,8 @@ public class test {
         //用于清空缓存区数字
         String Free=null;
         Scanner sc= new Scanner(System.in);
+        String a= sc.next();
+        int k=Integer.parseInt(a);
         System.out.println("请输入您要存入的数据的数量");
         int num=0;
         boolean flag=true;
