@@ -58,6 +58,11 @@ public class sort {
                 System.out.println("1e6量级的运算时间：" + time1 + "s");
 
             } else if ("2".equals(n2)) {
+                if("3".equals(n1)){
+                    System.out.println("这个算法需等待较长时间,不宜使用");
+                    System.out.println("请重试");
+                    continue;
+                }
                 int a[] = new int[100];
                 long startTime = System.currentTimeMillis();
                 int roud = 100000;
