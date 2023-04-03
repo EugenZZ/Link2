@@ -1,10 +1,10 @@
+import javax.management.MBeanRegistrationException;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Arithmetic {
-
     public static void main(String[] args) {
         while(true) {
             System.out.println("请输入您要计算的表达式：");
@@ -18,4 +18,5 @@ public class Arithmetic {
             System.out.println(arithmeticUnit.getAnswer(line));
         }
     }
+
 }

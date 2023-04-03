@@ -6,9 +6,7 @@ public class arithmeticUnit {
     //运算优先级
 
     private static final Pattern pattern = Pattern.compile("\\d+\\.?\\d?");
-    private static final Pattern pattern2 = Pattern.compile("^-?((−?)∗\\d+(\\.\\d+)?\n" +
-            "*[\\-/\\+\\*])+((−?)∗\\d+(\\.\\d+)?\n" +
-            "*)$");
+    private static final Pattern pattern2 = Pattern.compile("^(\\-?\\d+[\\.\\+\\-\\*\\/]?)*\\-?\\d+$\n");
     private static Set<Character> rightChar = new HashSet<Character>();
     private static Map<String, Integer> priority = new HashMap<>();
     private static Map<String, String> replace = new HashMap<>();
