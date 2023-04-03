@@ -22,7 +22,7 @@ public class sort {
             System.out.println("选择算法");
             System.out.println("1.归并排序");
             System.out.println("2.快速排序(递归)");
-            System.out.println("3.桶排序");
+            System.out.println("3.计数排序");
             System.out.println("4.基数排序");
             System.out.println("5.插入排序");
             System.out.println("6.快速排序(非递归)");
@@ -59,7 +59,7 @@ public class sort {
 
             } else if ("2".equals(n2)) {
                 if("3".equals(n1)){
-                    System.out.println("这个算法需等待较长时间,不宜使用");
+                    System.out.println("这个算法需可能等待较长时间,不宜使用");
                     System.out.println("请重试");
                     continue;
                 }

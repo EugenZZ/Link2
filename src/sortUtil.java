@@ -157,12 +157,13 @@ public class sortUtil {
     }
     public static void bucketSort(int[]a){
         int max=Arrays.stream(a).max().getAsInt();
+        int min=Arrays.stream(a).min().getAsInt();
         int []bucket =new int[max+1];
         for (int i = 0; i < a.length; i++) {
             bucket[a[i]]++;
         }
         int index = 0;
-        for (int i = 0; i < bucket.length; i++) {
+        for (int i = min; i < bucket.length; i++) {
             for (int j = 0; j < bucket[i]; j++) {
                 a[index++] = i;
             }
